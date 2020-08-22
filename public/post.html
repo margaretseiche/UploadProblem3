@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link href="./stylesheets/post.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    
+    <title>Document</title>
+</head>
+
+<body class="indexBod">
+
+    <div class="ui two column centered grid">
+        <div class="ui container">
+            <button class="ui left floated inverted button">
+                <a class="item" href="./index.html">Home</a>
+            </button>
+            <button class="ui right floated inverted button">
+                <a class="item" href="./login.html">Log in</a>
+            </button>
+            <button class="ui right floated inverted button">
+                <a class="item" href="./signup.html">Sign up</a>
+            </button>
+        </div>
+
+        <form action="/api/user-post" method="post" enctype="multipart/form-data" id="inputform">
+            
+            <div class="ui form">
+            <div class="field">
+                <label for="img">Select image</label>
+                <input type="file" id="img" name="img" accept="image/*">
+            </div>
+            <div class="field">
+                <label>Name</label>
+                <input type="text" id="post-title">
+            </div>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                      <label>Location</label>
+                      <input type="text" id="post-location">
+                    </div>
+                </div>
+                <h2>Rating</h2>
+                <div class="ui star rating" data-rating="3" id="post-rating"></div>
+    
+                <div class="ui form">
+                    <div class="field">
+                      <label>Review Text:</label>
+                      <textarea id="post-body"></textarea>
+                    </div>
+                </div>
+                <div class="ui form">
+                    <div class="field">
+                        <label>Tags</label>
+                        <input type="text" id="post-tags">
+                    </div>
+                </div>    
+
+                <!-- <input class="ui button" id="new-post-submit" type="submit" value="Submit"> -->
+            <!-- <button class="ui button" id="new-post-submit" type="submit" form="inputform">Submit:</button> -->
+            <button class="ui button"  type="submit" form="inputform">Submit:</button>
+        </form>
+        
+
+    </div>
+
+
+    <script src="js/post.js"></script>
+</body>
+
+</html>
